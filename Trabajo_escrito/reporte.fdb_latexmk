@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1715725477.64898 "d:/Escuela/EDA_2/Proyectos/Proyecto2/Trabajo_escrito/reporte.tex" "reporte.pdf" "reporte" 1715725480.26592 0
+["pdflatex"] 1715830262.94536 "d:/Escuela/EDA_2/Proyectos/Proyecto2/Proyecto2Eda2/Trabajo_escrito/reporte.tex" "reporte.pdf" "reporte" 1715830264.34794 0
   "C:/Users/zarat/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1711669046 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/zarat/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1707794686 23178960 a1b7d2308d24d21559a075efc84b8c2a ""
   "C:/Users/zarat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -74,10 +74,10 @@
   "C:/Users/zarat/AppData/Local/Programs/MiKTeX/tex/latex/subfig/subfig.sty" 1121306210 22049 9ef165ca6df8815c92e693146a376c92 ""
   "C:/Users/zarat/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/zarat/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "d:/Escuela/EDA_2/Proyectos/Proyecto2/Trabajo_escrito/reporte.tex" 1715725476 3382 0ab57e494134ae8a96c78fe09786c5e9 ""
-  "reporte.aux" 1715725479 811 5ed89fc225bc808f975bdfe668ce539c "pdflatex"
-  "reporte.out" 1715725479 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "reporte.tex" 1715725476 3382 0ab57e494134ae8a96c78fe09786c5e9 ""
+  "d:/Escuela/EDA_2/Proyectos/Proyecto2/Proyecto2Eda2/Trabajo_escrito/reporte.tex" 1715830262 5006 b88e8577ead809b53af430d4ceb887ca ""
+  "reporte.aux" 1715830264 811 db916c84a7530f9454cd1e6e47cc9f9b "pdflatex"
+  "reporte.out" 1715830264 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "reporte.tex" 1715830262 5006 b88e8577ead809b53af430d4ceb887ca ""
   (generated)
   "reporte.aux"
   "reporte.log"

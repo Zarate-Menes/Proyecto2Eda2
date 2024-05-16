@@ -34,8 +34,8 @@
 \newcommand{\Profesor}{Profesor: Edgar Tista García}
 \newcommand{\Materia}{Asignatura: Estructura de Datos y Algoritmos II}
 \newcommand{\Grupo}{Grupo:  5}
-\newcommand{\Nombre}{Integrantes: , Vázquez Flores José Angel, Zarate Menes Quetzalli}
-\newcommand{\NoLista}{No. de lista: , 35}
+\newcommand{\Nombre}{Integrantes: Martínez Trinidad Alexis, Vázquez Flores José Angel, Zarate Menes Quetzalli}
+\newcommand{\NoLista}{No. de lista: 22, 30, 35}
 \newcommand{\Proyecto}{PROYECTO \#2 - ÁRBOLES BINARIOS }
 \newcommand{\Semestre}{Semestre: 2024-2}
 \newcommand{\Fecha}{Fecha de entrega: 25 de mayo del 2024}
@@ -70,12 +70,25 @@
 \par\vspace{0.4cm}
 Que el alumno implemente aplicaciones relacionadas con los árboles binarios y que desarrolle sus habilidades de trabajo en equipo y programación orientada a objetos. 
 \par\vspace{1.5cm}
-
 \section*{\textcolor{red}{\textbf{INTRODUCCIÓN}}}
-
-
+En el mundo de la programación, las estructuras de datos son como los cimientos de una casa: organizan y mantienen la información de manera eficiente. Entre las más útiles y comunes están los árboles binarios, que representan relaciones jerárquicas como las ramas de un árbol.
+\par\vspace{0.4cm}
+Este proyecto busca crear un programa que explore las aplicaciones de los árboles binarios. El programa permitirá trabajar con tres tipos:
+\par\vspace{0.4cm}
+Árboles AVL: Son árboles binarios de búsqueda que se mantienen ''equilibrados'', con una altura similar en ambos lados. Esto los hace rápidos para buscar y agregar información.
+\par\vspace{0.4cm}
+Árboles Red-Black: Son una variante de los árboles AVL que usan ''colores'' para mantener el equilibrio. Son ideales para aplicaciones que necesitan un comportamiento predecible y eficiente.
+\par\vspace{0.4cm}
+Árboles de expresión aritmética: Representan operaciones matemáticas como sumas y restas. Permiten evaluar expresiones complejas de forma rápida.
+\par\vspace{0.4cm}
+El programa tendrá un menú fácil de usar. El usuario podrá elegir el tipo de árbol y la operación que desea realizar, como agregar, buscar, eliminar elementos o resolver expresiones aritméticas. Así, se explorarán las capacidades y ventajas de cada tipo de árbol binario en diferentes situaciones.
+\par\vspace{0.4cm}
+En resumen, este proyecto creará una herramienta para entender y usar mejor los árboles binarios, estructuras de datos esenciales en la programación.
+\par\vspace{0.4cm}
 
 \subsection*{\textcolor{blue}{Algoritmos de inserción y eliminación (para un árbol binario balanceado AVL)}}
+
+
 
 \subsection*{\textcolor{blue}{Algoritmo para la construcción de un árbol de expresión aritmética. }}
 
@@ -83,11 +96,45 @@ Que el alumno implemente aplicaciones relacionadas con los árboles binarios y q
 
 
 
-
-
 \section*{\textcolor{red}{\textbf{ANÁLISIS DEL DESARROLLO DEL PROGRAMA}}}
 
-\subsection*{\textcolor{blue}{  }}
+\subsection*{\textcolor{blue}{Menus.java}}
+Los dos programas, Menus.java y Main.java, trabajan en conjunto para proporcionar una interfaz de usuario interactiva para gestionar diferentes tipos de árboles binarios. El programa principal (Main.java) llama un método de la clase Menus y la utiliza para mostrar los menús principales y navegar entre las opciones. A su vez, la clase Menus contiene las funciones para mostrar los menús específicos de cada tipo de árbol y manejar las interacciones del usuario.
+\par\vspace{0cm}
+Elementos teóricos necesarios:
+\begin{itemize}
+    \item Estructuras de datos: El código utiliza la estructura de datos "árbol binario" para almacenar y manipular la información. Se implementan tres tipos específicos de árboles binarios:
+    \begin{itemize}
+        \item Árbol AVL: Un árbol binario autobalanceado que mantiene un equilibrio entre la altura de sus subárboles.
+        \item Árbol Red-Black: Otro tipo de árbol binario autobalanceado con propiedades similares al árbol AVL.
+        \item Árbol de expresión aritmética: Un árbol binario que representa una expresión aritmética, donde cada nodo contiene un operador o un operando.
+    \end{itemize}
+    \item Menús interactivos: El código utiliza técnicas de interacción con el usuario para mostrar los menús y capturar las opciones seleccionadas.
+\end{itemize}
+
+Estrategia para resolver el problema:
+\begin{enumerate}
+    \item Diseño de la interfaz de usuario: Se definen los menús principales y los menús específicos para cada tipo de árbol, considerando las opciones disponibles para cada tipo de dato.
+    \item Implementación de las funciones de menú: Se desarrollan las funciones para mostrar cada menú y manejar las acciones del usuario, como agregar claves, buscar valores, eliminar claves, mostrar el árbol y resolver expresiones (en el caso del árbol de expresión).
+    \item Integración con el programa principal: Se crea una instancia de la clase Menus en el programa principal y se la utiliza para mostrar los menús y navegar entre las opciones.
+\end{enumerate}
+
+
+Avance logrado:
+\par\vspace{0cm}
+El código proporcionado representa un avance significativo en la implementación de una interfaz de usuario para gestionar diferentes tipos de árboles binarios. Se han diseñado los menús, se ha implementado la lógica para mostrarlos y navegar entre ellos, y se ha esbozado la implementación de las opciones de menú para cada tipo de árbol. Por lo cual en cuanto al menú, consideramos un avance del 100\%.
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection*{\textcolor{blue}{  }}
 
@@ -99,7 +146,9 @@ Que el alumno implemente aplicaciones relacionadas con los árboles binarios y q
 
 \section*{\textcolor{red}{\textbf{CONCLUSIONES INDIVIDUALES}}}
 
-\subsection*{\textcolor{blue}{  }}
+\subsection*{\textcolor{blue}{Martínez Trinidad Alexis}}
+
+
 
 \subsection*{\textcolor{blue}{Vázquez Flores José Angel}}
 
