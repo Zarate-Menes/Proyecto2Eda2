@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Menus {
     
-    private ArbolBBBalanceado arbol;
-    arbol = new ArbolBBBalanceado();
+    private ArbolBBBalanceado arbol = new ArbolBBBalanceado();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void mostrarMenuPrincipal() {
@@ -148,7 +147,6 @@ public class Menus {
                 // Mostrar el árbol de expresión
                 break;
             case 3:
-                // Resolver la expresión aritmética
                 break;
             case 0:
                 mostrarMenuPrincipal();
@@ -187,7 +185,7 @@ public class Menus {
         }
     }
 
-    private void mostrarInorden() {
+    private  void mostrarInorden() {
         System.out.println("Recorrido en inorden:");
         inordenRecursivo(arbol.root);
         System.out.println();

@@ -8,7 +8,7 @@
  *
  * @author jose11
  */ 
-
+package arboles;
 public class ArbolBinBusq {
     protected Noda root;
 

@@ -1,3 +1,5 @@
+package arboles;
+
 import java.util.Scanner;
 
 public class Programa {

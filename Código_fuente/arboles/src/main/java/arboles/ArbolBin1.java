@@ -8,6 +8,7 @@
  *
  * @author Edgar
  */
+package arboles;
 import java.util.LinkedList;
 import java.util.Queue;
 

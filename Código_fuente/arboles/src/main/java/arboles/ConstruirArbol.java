@@ -1,3 +1,5 @@
+package arboles;
+
 import java.util.StringTokenizer;
 import java.util.Stack;
 

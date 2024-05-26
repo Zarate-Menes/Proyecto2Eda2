@@ -8,6 +8,7 @@
  *
  * @author jose11
  */
+package arboles;
 public class ArbolBBBalanceado extends ArbolBinBusq {
     
     // Constructor por defecto

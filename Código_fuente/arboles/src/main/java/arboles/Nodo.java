@@ -1,3 +1,4 @@
+package arboles;
 
 public class Nodo {
 

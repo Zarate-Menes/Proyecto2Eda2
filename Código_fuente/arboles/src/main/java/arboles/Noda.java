@@ -8,6 +8,8 @@
  *
  * @author Edgar
  */
+package arboles;
+
 public class Noda {
     int valor;
     Noda izq;
