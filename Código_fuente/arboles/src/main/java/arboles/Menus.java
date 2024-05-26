@@ -3,7 +3,9 @@ package arboles;
 import java.util.Scanner;
 
 public class Menus {
-
+    
+    private ArbolBBBalanceado arbol;
+    arbol = new ArbolBBBalanceado();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void mostrarMenuPrincipal() {
