@@ -88,8 +88,51 @@ En resumen, este proyecto creará una herramienta para entender y usar mejor los
 
 \subsection*{\textcolor{blue}{Algoritmos de inserción y eliminación (para un árbol binario balanceado AVL)}}
 
+Un Árbol AVL es una estructura de datos en forma de árbol binario de búsqueda (BST) que se auto-balancea después de cada inserción o eliminación para mantener su altura mínima posible. El nombre "AVL" proviene de los nombres de los inventores, Adelson-Velsky y Landis.
+
+Características Principales
+\begin{itemize}
+    \item Auto-balanceo: Después de cada inserción o eliminación, el árbol AVL se reorganiza automáticamente para asegurar que la diferencia de altura entre los subárboles izquierdo y derecho de cada nodo sea como máximo 1.
+    
+    \item Factor de Balanceo: Cada nodo en un árbol AVL tiene un factor de balance que representa la diferencia de altura entre su subárbol izquierdo y derecho. Este factor debe estar en el rango [-1, 0, 1].
+
+    \item Altura Equilibrada:Un árbol AVL tiene la propiedad de que la altura de sus subárboles en cada nodo difiere en un máximo de 1.
+    
+    \item Rotaciones:Para mantener el balance, se utilizan rotaciones simples y dobles en los nodos desequilibrados.
+    
+    \item Eficiencia:Las operaciones de búsqueda, inserción y eliminación tienen una complejidad de tiempo de O(log n) en el peor caso, donde "n" es el número de nodos en el árbol.
+\end{itemize}
+
+Funciones Importantes
+
+\begin{itemize}
+    \item Inserción:Durante la inserción de un nuevo nodo, se ajusta el balance del árbol mediante rotaciones según sea necesario para mantener la propiedad de AVL.
+    
+    \item Eliminación:Durante la eliminación de un nodo, se realizan rotaciones para restablecer el balance del árbol mientras se mantiene la propiedad de AVL.
+
+    \item Búsqueda:La búsqueda en un árbol AVL sigue el mismo principio que en un árbol binario de búsqueda estándar, donde se comparan los valores del nodo buscado con los valores en cada nodo del árbol.
+    
+    \item Rotaciones:Las rotaciones (simple a la derecha, simple a la izquierda, doble izquierda-derecha, doble derecha-izquierda) son operaciones clave utilizadas para reequilibrar el árbol durante las inserciones y eliminaciones.
+\end{itemize}
+
 
 \subsection*{\textcolor{blue}{Algoritmo para la construcción de un árbol de expresión aritmética. }}
+
+Un árbol de expresiones aritméticas en una forma de representar, en forma de estructura de árbol binario, una expresión matemática (operaciones matemáticas).
+
+En este tipo de representaciones hay dos tipos de nodos, nodos operadores y nodos operandos, donde los nodos hoja toman el lugar de los nodos operandos y los demás nodos intermedios el lugar de nodos operadores. En este proyecto se utilizo un árbol binario completo (un árbol en el que cada nodo tiene 0 o 2 hijos) por su facilidad para adaptarse a muchas expresiones aritméticas.
+
+Este tipo de árbol se evalúa, aplicando de manera recursiva, los nodos operadores con los nodos operandos.
+
+Algunas de las aplicaciones de este tipo de estructuras son las siguientes:
+\begin{itemize}
+    \item Evaluación de expresiones: Los árboles de expresiones se utilizan para evaluar expresiones matemáticas.
+    \item Manipulación de expresiones: Los árboles de expresiones permiten manipular matemáticamente las expresiones de una manera estructurada.
+    \item Generación de código: En compiladores e intérpretes, los árboles de expresiones se utilizan para generar código.
+    \item Visualización de expresiones: Los árboles de expresiones proporcionan una representación visual de las expresiones matemáticas, lo que puede ser útil para la enseñanza y el aprendizaje.
+    \item Optimización de expresiones: Los árboles de expresiones pueden ser optimizados para mejorar la eficiencia de la evaluación de la expresión.
+\end{itemize}
+
 
 \subsection*{\textcolor{blue}{Algoritmos de árbol red black }}
 El algoritmo de árbol rojo-negro es un método para organizar datos en un árbol binario de búsqueda. Garantiza que el árbol esté equilibrado, lo que significa que las operaciones de búsqueda, inserción y eliminación se pueden realizar en tiempo logarítmico promedio, incluso en el peor de los casos. Esto lo convierte en una estructura de datos eficiente para almacenar y recuperar información.
@@ -201,8 +244,8 @@ Elementos teóricos necesarios:
 \begin{itemize}
     \item Estructuras de datos: El código utiliza la estructura de datos "árbol binario" para almacenar y manipular la información. Se implementan tres tipos específicos de árboles binarios:
     \begin{itemize}
-        \item Árbol AVL: Un árbol binario autobalanceado que mantiene un equilibrio entre la altura de sus subárboles.
-        \item Árbol Red-Black: Otro tipo de árbol binario autobalanceado con propiedades similares al árbol AVL.
+        \item Árbol AVL: Un árbol binario auto balanceado que mantiene un equilibrio entre la altura de sus subárboles.
+        \item Árbol Red-Black: Otro tipo de árbol binario auto balanceado con propiedades similares al árbol AVL.
         \item Árbol de expresión aritmética: Un árbol binario que representa una expresión aritmética, donde cada nodo contiene un operador o un operando.
     \end{itemize}
     \item Menús interactivos: El código utiliza técnicas de interacción con el usuario para mostrar los menús y capturar las opciones seleccionadas.
@@ -211,12 +254,122 @@ Estrategia para resolver el problema:
 \begin{enumerate}
     \item Diseño de la interfaz de usuario: Se definen los menús principales y los menús específicos para cada tipo de árbol, considerando las opciones disponibles para cada tipo de dato.
     \item Implementación de las funciones de menú: Se desarrollan las funciones para mostrar cada menú y manejar las acciones del usuario, como agregar claves, buscar valores, eliminar claves, mostrar el árbol y resolver expresiones (en el caso del árbol de expresión).
-    \item Integración con el programa principal: Se crea una instancia de la clase Menus en el programa principal y se la utiliza para mostrar los menús y navegar entre las opciones.
+    \item Integración con el programa principal: Se crea una instancia de la clase Menús en el programa principal y se la utiliza para mostrar los menús y navegar entre las opciones.
 \end{enumerate}
 Avance logrado:
 \par\vspace{0cm}
 El código proporcionado representa un avance significativo en la implementación de una interfaz de usuario para gestionar diferentes tipos de árboles binarios. Se han diseñado los menús, se ha implementado la lógica para mostrarlos y navegar entre ellos, y se ha esbozado la implementación de las opciones de menú para cada tipo de árbol. Por lo cual en cuanto al menú, consideramos un avance del 100\%.
 
+\subsection*{\textcolor{blue}{Árbol AVL}}
+\subsection{\textcolor{blue}{Noda.java}}
+
+\textbf{Atributos:}
+\begin{itemize}
+    \item \textbf{valor:} Almacena el valor numérico del nodo.
+    
+    \item \textbf{izq y der:} Referencias al hijo izquierdo y derecho del nodo, respectivamente. Estas referencias apuntan a otros nodos o pueden ser nulas si el nodo no tiene hijos.
+\end{itemize}
+
+\textbf{Constructores:}
+\begin{itemize}
+    \item \textbf{Noda():} Constructor por defecto que inicializa las referencias izq y der como nulas.
+    
+    \item \textbf{Noda(int data):}Constructor que inicializa el valor del nodo con el valor proporcionado y las referencias izq y der como nulas.
+    
+     \item \textbf{Noda(int data, Noda lt, Noda rt): }Constructor que permite inicializar el valor del nodo y especificar los nodos hijos izquierdo y derecho.
+\end{itemize}
+
+\textbf{Métodos:}
+\begin{itemize}
+    \item \textbf{setIzq(Noda izq): }Establece el nodo hijo izquierdo.
+    
+    \item \textbf{setDer(Noda der):}Establece el nodo hijo derecho.
+\end{itemize}
+
+\subsection{\textcolor{blue}{ArbolBin1.java}}
+
+\textbf{Atributos:}
+\begin{itemize}
+    \item \textbf{root:} Es una referencia al nodo raíz del árbol.
+    
+\end{itemize}
+
+\textbf{Constructores:}
+\begin{itemize}
+    \item \textbf{ArbolBin1():} Constructor por defecto que inicializa root como nulo.
+    
+    \item \textbf{ArbolBin1(int val):}Constructor que inicializa el árbol con un nodo raíz que tiene el valor proporcionado.
+    
+     \item \textbf{ArbolBin1(Noda root): }Constructor que inicializa el árbol con el nodo proporcionado como raíz.
+\end{itemize}
+
+\textbf{Métodos:}
+\begin{itemize}
+    \item \textbf{add(Noda padre, Noda hijo, int lado):}Permite añadir un nodo hijo a un nodo padre en el lado especificado (izquierdo o derecho).
+    
+    \item \textbf{breadthFrist():}Realiza un recorrido por niveles en el árbol, imprimiendo los valores de los nodos en orden de nivel.
+
+    \item \textbf{eliminar(int valor):}Permite eliminar un nodo del árbol binario según su valor.
+
+    \item \textbf{eliminarRecursivo(Noda nodo, int valor):}Método auxiliar para eliminar un nodo recursivamente.
+    
+    \item \textbf{encontrarMinimoValor(Nodo nodo):}Encuentra el valor mínimo en un subárbol a partir de un nodo dado.
+    
+    \item \textbf{buscar(int valor):}Busca un valor específico en el árbol binario.
+
+    \item \textbf{buscarRecursivo(Nodo nodo, int valor): }Método auxiliar para buscar un valor recursivamente en el árbol.
+    
+\end{itemize}
+
+\subsection{\textcolor{blue}{ArbolBinBusq.java}}
+
+\textbf{Constructores:}
+\begin{itemize}
+    \item \textbf{ArbolBinBusq():} Constructor por defecto que llama al constructor de la superclase ArbolBin.
+    
+    \item \textbf{ArbolBinBusq(int val):}Constructor que inicializa el árbol con un nodo raíz que tiene el valor proporcionado.
+    
+     \item \textbf{ArbolBinBusq(Noda root):}Constructor que inicializa el árbol con el nodo proporcionado como raíz.
+\end{itemize}
+
+\textbf{Métodos:}
+\begin{itemize}
+    \item \textbf{insertar(int valor):}Inserta un nuevo nodo con el valor dado en el árbol binario de búsqueda.
+    
+    \item \textbf{insertarRecursivo(Nodo nodo, int valor): }Método auxiliar para insertar un nodo de manera recursiva en el árbol binario de búsqueda.
+
+    \item \textbf{buscar(int valor): }Busca un valor específico en el árbol binario de búsqueda.
+
+    \item \textbf{buscarRecursivo(Nodo nodo, int valor):}Método auxiliar para buscar un valor de manera recursiva en el árbol binario de búsqueda.
+\end{itemize}
+
+\subsection{\textcolor{blue}{ArbolBBBalanceado.java}}
+
+\textbf{Constructores:}
+\begin{itemize}
+    \item \textbf{ArbolBBBalanceado():}Constructor por defecto que llama al constructor de la superclase ArbolBinBusq.
+    
+     \item \textbf{ArbolBBBalanceado(int val):} Constructor que inicializa el árbol con un nodo raíz que tiene el valor proporcionado.
+     
+     \item \textbf{ArbolBBBalanceado(Nodo root):} Constructor que inicializa el árbol con el nodo proporcionado como raíz.
+\end{itemize}
+
+\textbf{Métodos:}
+\begin{itemize}
+    \item \textbf{insertar(int valor):} Inserta un nuevo nodo con el valor dado en el árbol binario de búsqueda balanceado.
+    
+    \item \textbf{insertarRecursivo(Nodo nodo, int valor):} Método auxiliar para insertar un nodo de manera recursiva en el árbol binario de búsqueda balanceado.
+
+    \item \textbf{rotarDerecha(Nodo y):} Realiza una rotación a la derecha en el árbol AVL para balancearlo.
+
+    \item \textbf{rotarIzquierda(Nodo x):} Realiza una rotación a la izquierda en el árbol AVL para balancearlo.
+
+    \item \textbf{altura(Nodo nodo):} Calcula la altura de un nodo en el árbol AVL.
+
+    \item \textbf{obtenerBalance(Nodo nodo):} Calcula el factor de balance de un nodo en el árbol AVL.
+\end{itemize}
+
+\subsection*{\textcolor{blue}{Árbol Red-Black}}
 \subsection{\textcolor{blue}{RedBlackTree.java}}
 El programa implementa un Árbol Rojo-Negro (Red-Black Tree) con las siguientes funcionalidades:
 \begin{itemize}
@@ -224,6 +377,8 @@ El programa implementa un Árbol Rojo-Negro (Red-Black Tree) con las siguientes 
     \item \textbf{Eliminar clave (deleteNode):} Permite eliminar una clave específica del árbol, también manteniendo las propiedades del Árbol Rojo-Negro.
     \item \textbf{Mostrar árbol (printTree):} Imprime el árbol en la consola, mostrando la estructura y los colores de los nodos.
 \end{itemize}
+
+
 
 \subsection{\textcolor{blue}{NodeRedBlack.java}}
 Define la estructura del nodo del árbol Rojo-Negro. Cada nodo contiene:
@@ -285,11 +440,48 @@ Este proyecto está directamente relacionado con los conceptos de árboles binar
 
 En conclusión, se lograron todos los requerimientos solicitados: se implementó un Árbol Rojo-Negro con las funcionalidades de agregar, eliminar y mostrar el árbol, manteniendo las propiedades teóricas y prácticas necesarias para asegurar el balance del árbol.
 
-\subsection*{\textcolor{blue}{  }}
+\subsection*{\textcolor{blue}{Árbol de expresiones aritméticas }}
 
-\subsection*{\textcolor{blue}{  }}
+\subsection{\textcolor{blue}{Clase Nodo.java}}
 
+En esta clase tiene las estructuras de nodos, para el árbol de expresiones aritméticas, como: 
+        \begin{itemize}
+            \item Crear nodos.
+            \item Ver el contenido de los nodos.
+            \item Devolver el contenido de un nodo hijo.
+        \end{itemize}
 
+\subsection{\textcolor{blue}{Clase ArbolBin.java}}
+
+Esta clase contiene las estructuras necesarias para crea un árbol binario y son las siguiente:
+    \begin{itemize}
+        \item Como atributo un Nodo raíz.
+        \item Dos constructores, uno para inicializar el nodo raíz en null y otro para cambiar el valor del nodo raíz y sus nodos hijos izquierdo y derecho.
+        \item Un método que imprime el valor del nodo que recibe por referencia.
+        \item El algoritmo de recorrido (para árboles) inOrden.
+    \end{itemize}
+
+\subsection{\textcolor{blue}{Clase ConstruirArbol.java}}
+
+Esta clase se podría decir es la más importante para llevar acabo la contrición y resolución del árbol de expresiones aritméticas, contiene lo siguiente:
+    \begin{itemize}
+        \item El método \verb|construccionArbol| con el cual se construye el árbol usando el algoritmo inOrden y la ayuda de dos pilas (operadores y operandos), las cuales combinan dos valores y un operador para crear un subárbol.
+        \item El método \verb|construirSubarbol| este método crea los subárboles con sus nodos operadores y nodos operandos. 
+        \item El método \verb|esOperador| que devuelve si un token es, o no, uno de los cuatro operadores (+,-,*,/). 
+        \item El método \verb|precedencia| que obtiene la precedencia de los operadores dándole mayor importancia a los operadores de multiplicación y división que a los operadores de suma y resta.
+        \item El método \verb|resolverExpresion| resuelve la expresión representada en el árbol iniciando la evaluación desde su nodo raíz.
+        \item El método \verb|evaluarExpresionRecursivamente| verifica de manera recursiva la expresión del árbol binario, siguiendo el algoritmo postOrden para su evaluación.
+    \end{itemize}
+
+\subsection{\textcolor{blue}{Clase Programa.java}}
+
+Esta clase no es mas que un simple menú que muestra lo que puedes hacer durante su ejecución como:
+    \begin{itemize}
+        \item Ingresar una expresión u operación aritmética.
+        \item Ver el árbol de expresiones aritméticas con el algoritmo de recorrido inOrden.
+        \item Evaluar el la expresión.
+        \item Salir.
+    \end{itemize}
 
 
 
@@ -297,11 +489,15 @@ En conclusión, se lograron todos los requerimientos solicitados: se implementó
 
 \subsection*{\textcolor{blue}{Martínez Trinidad Alexis}}
 
+El árbol de expresiones es una estructura de datos muy importantes ya que se pueden resolver operación matemáticas de manera rápida y eficiente, ya que puedes controlar de manera efectiva casos particulares durante la ejecución, como la división entres ceros. 
 
+En otras palabras, aunque haya otras formas de resolver estas operaciones, el árbol de expresiones aritméticas es muy eficaz para su su resolución especialmente en el contexto de la programación y la informática, aun cuando existen métodos como la Notación prefija, infija o la posfija.
 
 \subsection*{\textcolor{blue}{Vázquez Flores José Angel}}
 
+Durante el desarrollo de este proyecto realizamos la implementación de algunos tipos de arboles, como lo son el árbol AVL, Red-Black, de expresiones matemáticas. Además, realizamos la implementación de un menú para manejar y cada uno de ellos. De igual manera, estudiamos y comprendimos de forma satisfactoria la lógica a implementar para cada uno de los arboles implementados. 
 
+Por otra parte, realizamos una buena repartición de la práctica en equipo y realizamos todas las taras de forma satisfactoria, por ende, logramos una buena implementación de los objetivos del proyecto, logrando un buen resultado. 
 
 \subsection*{\textcolor{blue}{Zarate Menes Quetzalli}}
 \subsection*{Análisis del Cumplimiento de los Objetivos}

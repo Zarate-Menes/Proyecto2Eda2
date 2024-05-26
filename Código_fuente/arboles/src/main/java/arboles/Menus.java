@@ -7,7 +7,7 @@ public class Menus {
     private ArbolBBBalanceado arbol = new ArbolBBBalanceado();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void mostrarMenuPrincipal() {
+    public void mostrarMenuPrincipal() {
         BorrarPantalla();
         System.out.println("\n\n**** Menú Principal ****");
         System.out.println("1. Árbol AVL");
@@ -27,7 +27,8 @@ public class Menus {
                 mostrarMenuArbolRedBlack();
                 break;
             case 3:
-                mostrarMenuArbolExpresion();
+                Programa arbolEAritmeticas = new Programa();
+                arbolEAritmeticas.menuArbol();
                 break;
             case 0:
                 System.out.println("Saliendo del programa...");
@@ -37,7 +38,7 @@ public class Menus {
         }
     }
 
-    private static void mostrarMenuArbolAVL() {
+    private void mostrarMenuArbolAVL() {
         BorrarPantalla();
         System.out.println("\n\n**** Menú Árbol AVL ****");
         System.out.println("1. Agregar clave");
@@ -81,7 +82,7 @@ public class Menus {
     }
 
 
-    private static void mostrarMenuArbolRedBlack() {
+    private void mostrarMenuArbolRedBlack() {
         RedBlackTree tree = new RedBlackTree();
         while (true) {
             BorrarPantalla();
@@ -126,36 +127,7 @@ public class Menus {
         }
     }
 
-    private static void mostrarMenuArbolExpresion() {
-        BorrarPantalla();
-        System.out.println("\n\n**** Menú Árbol de Expresión Aritmética ****");
-        System.out.println("1. Ingresar expresión");
-        System.out.println("2. Mostrar árbol");
-        System.out.println("3. Resolver");
-        System.out.println("0. Regresar al menú principal");
 
-        System.out.print("Ingrese una opción: ");
-        int opcion = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
-
-        // Implementar la lógica para cada opción del menú Expresión
-        switch (opcion) {
-            case 1:
-                // Ingresar expresión aritmética
-                break;
-            case 2:
-                // Mostrar el árbol de expresión
-                break;
-            case 3:
-                break;
-            case 0:
-                mostrarMenuPrincipal();
-                break;
-            default:
-                System.out.println("Opción no válida.");
-        
-        }
-    }
 
     private static void BorrarPantalla() {
         System.out.print("\033[H\033[2J");

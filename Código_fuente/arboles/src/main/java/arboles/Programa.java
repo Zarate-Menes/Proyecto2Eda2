@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Programa {
 
-    public static void main(String[] args) {
+    public void menuArbol() {
 
         Scanner scan = new Scanner(System.in);
         ConstruirArbol arbol = new ConstruirArbol();

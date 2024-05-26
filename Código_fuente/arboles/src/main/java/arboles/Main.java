@@ -8,7 +8,8 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Menus.mostrarMenuPrincipal();
+        Menus menuPrincipal = new Menus();
+        menuPrincipal.mostrarMenuPrincipal();
     }
 
 
