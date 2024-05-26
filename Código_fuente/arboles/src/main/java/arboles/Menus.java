@@ -71,34 +71,49 @@ public class Menus {
         }
     }
 
+
     private static void mostrarMenuArbolRedBlack() {
-        BorrarPantalla();
-        System.out.println("\n\n**** Menú Árbol Red-Black ****");
-        System.out.println("1. Agregar clave");
-        System.out.println("2. Eliminar clave");
-        System.out.println("3. Mostrar árbol");
-        System.out.println("0. Regresar al menú principal");
+        RedBlackTree tree = new RedBlackTree();
+        while (true) {
+            BorrarPantalla();
+            System.out.println("\n\n**** Menú Árbol Red-Black ****");
+            System.out.println("1. Agregar clave");
+            System.out.println("2. Eliminar clave");
+            System.out.println("3. Mostrar árbol");
+            System.out.println("0. Regresar al menú principal");
 
-        System.out.print("Ingrese una opción: ");
-        int opcion = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
+            System.out.print("Ingrese una opción: ");
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Consumir el salto de línea
 
-        // Implementar la lógica para cada opción del menú Red-Black
-        switch (opcion) {
-            case 1:
-                // Agregar clave al árbol Red-Black
-                break;
-            case 2:
-                // Eliminar clave del árbol Red-Black
-                break;
-            case 3:
-                // Mostrar el árbol Red-Black
-                break;
-            case 0:
-                mostrarMenuPrincipal();
-                break;
-            default:
-                System.out.println("Opción no válida.");
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese la clave a agregar: ");
+                    int claveAgregar = scanner.nextInt();
+                    scanner.nextLine(); // Consumir el salto de línea
+                    tree.insert(claveAgregar);
+                    System.out.println("Clave agregada correctamente.");
+                    esperarTecla();
+                    break;
+                case 2:
+                    System.out.print("Ingrese la clave a eliminar: ");
+                    int claveEliminar = scanner.nextInt();
+                    scanner.nextLine(); // Consumir el salto de línea
+                    tree.deleteNode(claveEliminar);
+                    System.out.println("Clave eliminada correctamente.");
+                    esperarTecla();
+                    break;
+                case 3:
+                    tree.printTree();
+                    esperarTecla();
+                    break;
+                case 0:
+                    mostrarMenuPrincipal();
+                    return;
+                default:
+                    System.out.println("Opción no válida.");
+                    esperarTecla();
+            }
         }
     }
 
@@ -138,5 +153,13 @@ public class Menus {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+
+    private static void esperarTecla() {
+        System.out.println("Presione Enter para continuar...");
+        scanner.nextLine();
+    }
+
+    
 }
+
     

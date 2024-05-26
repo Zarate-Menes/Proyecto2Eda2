@@ -89,10 +89,106 @@ En resumen, este proyecto creará una herramienta para entender y usar mejor los
 \subsection*{\textcolor{blue}{Algoritmos de inserción y eliminación (para un árbol binario balanceado AVL)}}
 
 
-
 \subsection*{\textcolor{blue}{Algoritmo para la construcción de un árbol de expresión aritmética. }}
 
 \subsection*{\textcolor{blue}{Algoritmos de árbol red black }}
+El algoritmo de árbol rojo-negro es un método para organizar datos en un árbol binario de búsqueda. Garantiza que el árbol esté equilibrado, lo que significa que las operaciones de búsqueda, inserción y eliminación se pueden realizar en tiempo logarítmico promedio, incluso en el peor de los casos. Esto lo convierte en una estructura de datos eficiente para almacenar y recuperar información.
+\par\vspace{0.4cm}
+Propiedades de los Árboles Rojo-Negro:
+\begin{enumerate}
+    \item Cada nodo es rojo o negro.
+    \item La raíz es negra.
+    \item Todas las hojas (NIL o nodos externos) son negras.
+    \item Si un nodo es rojo, entonces ambos hijos son negros (no puede haber dos nodos rojos consecutivos).
+    \item Para cada nodo, todos los caminos simples desde ese nodo hasta sus descendientes NIL contienen el mismo número de nodos negros.
+\end{enumerate}
+Operaciones en Árboles Rojo-Negro:
+\par\vspace{0.4cm}
+\textbf{Algoritmo de Inserción}
+\begin{itemize}
+    \item La inserción en un árbol rojo-negro sigue estos pasos generales:
+    \begin{itemize}
+        \item Inserta el nuevo nodo como en un árbol binario de búsqueda normal, poniéndolo en la posición adecuada según el orden.
+        \item Marca el nodo insertado como rojo.
+    \end{itemize}
+    \item Rebalanceo del árbol:
+    \begin{itemize}
+        \item Si el nodo insertado es la raíz, se pinta de negro (propiedad 2).
+        \item Si el padre del nodo insertado es negro, el árbol sigue siendo un árbol rojo-negro válido.
+        \item Si el padre del nodo insertado es rojo, entonces se viola la propiedad 4 y se deben realizar ajustes. Estos ajustes se hacen a través de rotaciones y recoloreos. Hay varios casos que manejar, dependiendo de la estructura del árbol y la posición del nodo insertado.
+    \end{itemize}
+\end{itemize}
+\textbf{Casos de Rebalanceo: Sea z el nodo insertado, p el padre de z, g el abuelo de z y t el tío de z.}
+\begin{enumerate}
+    \item Caso 1: El padre es negro
+    \begin{itemize}
+        \item El árbol está balanceado y no se requiere ninguna acción.
+    \end{itemize}
+    \item Caso 2: El padre es rojo y el tío es rojo: 
+    \begin{itemize}
+        \item Pinta el padre y el tío de negro.
+        \item Pinta el abuelo de rojo.
+        \item Repite el proceso desde el abuelo (ahora considerado como el nodo insertado z).
+    \end{itemize}
+    \item Caso 3: El padre es rojo y el tío es negro o NIL:
+    \begin{itemize}
+        \item Caso 3a: z es el hijo izquierdo de p y p es el hijo izquierdo de g (o simétricamente):
+        \begin{itemize}
+            \item Realiza una rotación a la derecha en g.
+            \item Intercambia los colores de p y g.
+        \end{itemize}
+        \item Caso 3b: z es el hijo derecho de p y p es el hijo izquierdo de g (o simétricamente):
+        \begin{itemize}
+            \item Realiza una rotación a la izquierda en p.
+            \item Ahora z es el hijo izquierdo de p.
+            \item Aplica el caso 3a.
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+\textbf{Algoritmo de Eliminación:}
+La eliminación de un nodo en un árbol rojo-negro también se realiza en dos fases
+\begin{enumerate}
+    \item Eliminación
+    \begin{itemize}
+        \item Encuentra el nodo z que se quiere eliminar.
+        \item Si z tiene dos hijos, encuentra el sucesor, intercambia los valores y elimina el sucesor.
+        \item Marca el nodo que reemplazará a z como x.
+    \end{itemize}
+    \item Rebalanceo del Árbol
+    \begin{itemize}
+        \item Si x o el nodo eliminado son rojos, simplemente se pinta de negro y termina.
+        \item Si x y el nodo eliminado son negros, se debe realizar un rebalanceo. Existen varios casos:
+        \begin{itemize}
+            \item Caso 1: x es la nueva raíz:
+            \begin{itemize}
+                \item No se requiere ninguna acción adicional.
+            \end{itemize}
+            \item Caso 2: x tiene un hermano w rojo:
+            \begin{itemize}
+                \item Intercambia los colores del padre de x y w.
+                \item Realiza una rotación en el padre de x y actualiza w.
+            \end{itemize}
+            \item Caso 3: x tiene un hermano w negro y ambos hijos de w son negros:
+            \begin{itemize}
+                \item Pinta w de rojo.
+                \item Si el padre de x es rojo, se pinta de negro.
+                \item Si el padre de x es negro, repite el proceso desde el padre de x.
+            \end{itemize}
+            \item Caso 4: x tiene un hermano w negro, el hijo izquierdo de w es rojo y el hijo derecho de w es negro:
+            \begin{itemize}
+                \item Pinta el hijo izquierdo de w de negro y w de rojo.
+                \item Realiza una rotación a la derecha en w.
+            \end{itemize}
+            \item Caso 5: x tiene un hermano w negro y el hijo derecho de w es rojo:
+            \begin{itemize}
+                \item Intercambia los colores de w y el padre de x.
+                \item Pinta el hijo derecho de w de negro.
+                \item Realiza una rotación a la izquierda en el padre de x.
+                \item Termina.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
 
 
 
@@ -111,30 +207,83 @@ Elementos teóricos necesarios:
     \end{itemize}
     \item Menús interactivos: El código utiliza técnicas de interacción con el usuario para mostrar los menús y capturar las opciones seleccionadas.
 \end{itemize}
-
 Estrategia para resolver el problema:
 \begin{enumerate}
     \item Diseño de la interfaz de usuario: Se definen los menús principales y los menús específicos para cada tipo de árbol, considerando las opciones disponibles para cada tipo de dato.
     \item Implementación de las funciones de menú: Se desarrollan las funciones para mostrar cada menú y manejar las acciones del usuario, como agregar claves, buscar valores, eliminar claves, mostrar el árbol y resolver expresiones (en el caso del árbol de expresión).
     \item Integración con el programa principal: Se crea una instancia de la clase Menus en el programa principal y se la utiliza para mostrar los menús y navegar entre las opciones.
 \end{enumerate}
-
-
 Avance logrado:
 \par\vspace{0cm}
 El código proporcionado representa un avance significativo en la implementación de una interfaz de usuario para gestionar diferentes tipos de árboles binarios. Se han diseñado los menús, se ha implementado la lógica para mostrarlos y navegar entre ellos, y se ha esbozado la implementación de las opciones de menú para cada tipo de árbol. Por lo cual en cuanto al menú, consideramos un avance del 100\%.
 
+\subsection{\textcolor{blue}{RedBlackTree.java}}
+El programa implementa un Árbol Rojo-Negro (Red-Black Tree) con las siguientes funcionalidades:
+\begin{itemize}
+    \item \textbf{Insertar clave (insert):} Permite agregar una clave en el árbol, manteniendo las propiedades del Árbol Rojo-Negro.
+    \item \textbf{Eliminar clave (deleteNode):} Permite eliminar una clave específica del árbol, también manteniendo las propiedades del Árbol Rojo-Negro.
+    \item \textbf{Mostrar árbol (printTree):} Imprime el árbol en la consola, mostrando la estructura y los colores de los nodos.
+\end{itemize}
 
+\subsection{\textcolor{blue}{NodeRedBlack.java}}
+Define la estructura del nodo del árbol Rojo-Negro. Cada nodo contiene:
+\begin{itemize}
+    \item \textbf{data:} El valor almacenado en el nodo.
+    \item \textbf{parent:} El nodo padre.
+    \item \textbf{left:} El hijo izquierdo.
+    \item \textbf{right:} El hijo derecho.
+    \item \textbf{color:} El color del nodo (0 para negro y 1 para rojo).
+\end{itemize}
 
+\subsubsection{Descripción de los Elementos Teóricos}
 
+Un Árbol Rojo-Negro es un tipo de árbol binario de búsqueda autobalanceado con las siguientes propiedades:
+\begin{enumerate}
+    \item Cada nodo es rojo o negro.
+    \item La raíz es negra.
+    \item Todas las hojas (TNULL) son negras.
+    \item Si un nodo es rojo, entonces ambos hijos son negros.
+    \item Para cada nodo, todos los caminos desde el nodo hasta sus hojas descendientes contienen el mismo número de nodos negros.
+\end{enumerate}
 
+Estas propiedades aseguran que el árbol se mantenga aproximadamente balanceado, garantizando una complejidad de tiempo \(O(\log n)\) para las operaciones de búsqueda, inserción y eliminación.
 
+\subsubsection{Estrategia para Resolver el Problema}
 
+La estrategia para implementar el Árbol Rojo-Negro se dividió en varios pasos clave:
+\begin{enumerate}
+    \item \textbf{Definición de la estructura del nodo (Node):} Crear una clase para representar los nodos del árbol, incluyendo la información necesaria y el color.
+    \item \textbf{Inicialización del árbol (RedBlackTree):} Implementar el constructor para inicializar el árbol con un nodo nulo (TNULL) que sirve como hoja para todos los nodos.
+    \item \textbf{Implementación de las rotaciones (leftRotate y rightRotate):} Estas funciones son cruciales para mantener el balance del árbol durante las inserciones y eliminaciones.
+    \item \textbf{Inserción de nodos (insert y fixInsert):} Implementar la inserción de nuevos nodos, seguido de la corrección del árbol para mantener las propiedades del Árbol Rojo-Negro.
+    \item \textbf{Eliminación de nodos (deleteNode y fixDelete):} Implementar la eliminación de nodos y la corrección subsecuente del árbol.
+    \item \textbf{Impresión del árbol (printTree):} Desarrollar una función para visualizar la estructura y colores del árbol en la consola.
+\end{enumerate}
 
+\subsubsection{Principales Dificultades y Soluciones}
 
+\begin{itemize}
+    \item \textbf{Mantener las propiedades del Árbol Rojo-Negro:} La mayor dificultad fue asegurarse de que las propiedades del Árbol Rojo-Negro se mantuvieran después de cada inserción y eliminación. Esto se resolvió implementando correctamente las rotaciones y las funciones de corrección (\textit{fixInsert} y \textit{fixDelete}).
+    \item \textbf{Manejo de casos especiales durante la eliminación:} El proceso de eliminación es más complejo debido a los diversos casos que pueden surgir (por ejemplo, cuando el nodo a eliminar tiene dos hijos). Se implementaron cuidadosamente los casos especiales y se realizaron pruebas para asegurar la corrección del algoritmo.
+    \item \textbf{Visualización del árbol:} Imprimir el árbol de manera que la estructura y los colores fueran claros requirió un manejo cuidadoso de la recursión y los prefijos para representar los niveles y ramas del árbol.
+\end{itemize}
 
+\subsubsection{Relación con los Elementos Vistos en Teoría}
 
+Este proyecto está directamente relacionado con los conceptos de árboles binarios de búsqueda, árboles autobalanceados y algoritmos de inserción y eliminación en estructuras de datos. Específicamente, los Árboles Rojo-Negro son un tipo avanzado de árbol binario de búsqueda que garantiza el balance del árbol mediante reglas de color y rotaciones, lo cual es un tema fundamental en cursos de estructuras de datos y algoritmos.
 
+\subsubsection{Avance Logrado de Acuerdo con los Requerimientos}
+
+\begin{itemize}
+    \item \textbf{Árbol Red Black Implementado:}
+    \begin{itemize}
+        \item \textbf{Agregar clave:} Implementado con éxito mediante el método \textit{insert} y la función de corrección \textit{fixInsert}.
+        \item \textbf{Eliminar clave:} Implementado con éxito mediante el método \textit{deleteNode} y la función de corrección \textit{fixDelete}.
+        \item \textbf{Mostrar árbol:} Implementado con éxito mediante el método \textit{printTree}, que muestra la estructura y colores de los nodos en la consola.
+    \end{itemize}
+\end{itemize}
+
+En conclusión, se lograron todos los requerimientos solicitados: se implementó un Árbol Rojo-Negro con las funcionalidades de agregar, eliminar y mostrar el árbol, manteniendo las propiedades teóricas y prácticas necesarias para asegurar el balance del árbol.
 
 \subsection*{\textcolor{blue}{  }}
 
@@ -155,6 +304,54 @@ El código proporcionado representa un avance significativo en la implementació
 
 
 \subsection*{\textcolor{blue}{Zarate Menes Quetzalli}}
+\subsection*{Análisis del Cumplimiento de los Objetivos}
 
+El objetivo principal de la práctica era que el alumno implementara aplicaciones relacionadas con los árboles binarios y desarrollara habilidades de trabajo en equipo y programación orientada a objetos. Este objetivo se cumplió satisfactoriamente por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{Implementación de Árboles Binarios:} Se logró implementar un Árbol Rojo-Negro, un tipo avanzado de árbol binario de búsqueda. Las funcionalidades de inserción, eliminación y visualización fueron desarrolladas con éxito.
+    \item \textbf{Trabajo en Equipo:} La práctica requería una división de tareas clara y una colaboración constante para asegurar que todas las partes del programa funcionaran correctamente.
+    \item \textbf{Programación Orientada a Objetos:} Se aplicaron principios de programación orientada a objetos, como encapsulación y modularidad, a través de las clases \textit{RedBlackTree} y \textit{Node}.
+\end{itemize}
+
+\subsection*{Contribución al Aprendizaje del Concepto}
+
+Los ejercicios contribuyeron significativamente al aprendizaje de los conceptos relacionados con los árboles binarios de búsqueda autobalanceados, por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{Profundización en Árboles Rojo-Negro:} Implementar un Árbol Rojo-Negro ayudó a entender profundamente sus propiedades y el funcionamiento de las rotaciones y correcciones necesarias para mantener el balance del árbol.
+    \item \textbf{Algoritmos de Inserción y Eliminación:} Desarrollar los algoritmos de inserción y eliminación en el árbol Rojo-Negro facilitó la comprensión de las complejidades asociadas con el mantenimiento de las propiedades del árbol.
+\end{itemize}
+
+\subsection*{Posibles Ventajas y Desventajas del Concepto Visto en la Práctica}
+
+\begin{itemize}
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item \textbf{Eficiencia:} Los árboles Rojo-Negro ofrecen una complejidad de tiempo \(O(\log n)\) para operaciones de búsqueda, inserción y eliminación.
+        \item \textbf{Autobalanceo:} Mantienen el árbol balanceado automáticamente, lo cual es crucial para garantizar un rendimiento constante.
+    \end{itemize}
+    \item \textbf{Desventajas:}
+    \begin{itemize}
+        \item \textbf{Complejidad de Implementación:} La implementación es más compleja comparada con otros tipos de árboles binarios de búsqueda debido a la necesidad de manejar colores y realizar rotaciones.
+        \item \textbf{Sobrecarga Adicional:} La necesidad de mantener información adicional (colores y punteros) introduce una pequeña sobrecarga en términos de memoria.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Crítica Constructiva y Propuestas de Mejora}
+
+\begin{itemize}
+    \item \textbf{Mejoras en la Práctica:}
+    \begin{itemize}
+        \item \textbf{Incorporación de Visualización Gráfica:} Agregar una herramienta gráfica para visualizar el árbol Rojo-Negro podría facilitar la comprensión de los conceptos.
+        \item \textbf{Más Casos de Prueba:} Incluir una mayor variedad de casos de prueba, especialmente aquellos que cubren casos extremos y bordes, ayudaría a reforzar el entendimiento de las operaciones en el árbol.
+    \end{itemize}
+    \item \textbf{Propuestas de Modificación:}
+    \begin{itemize}
+        \item \textbf{División en Módulos Pequeños:} Dividir la práctica en módulos más pequeños podría hacer que los alumnos se concentren en partes específicas del árbol Rojo-Negro antes de abordar la implementación completa.
+    \end{itemize}
+\end{itemize}
+
+En resumen, la práctica no solo permitió cumplir con los objetivos establecidos, sino que también proporcionó una comprensión profunda de los árboles Rojo-Negro y sus operaciones, destacando tanto sus ventajas como sus desafíos en la implementación.
 
 \end{document}
