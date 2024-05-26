@@ -74,7 +74,6 @@ public class Programa {
                     break;
             }
         }
-        scan.close();
     }
 }
 

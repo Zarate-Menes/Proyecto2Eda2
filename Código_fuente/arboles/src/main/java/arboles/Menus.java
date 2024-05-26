@@ -3,13 +3,13 @@ package arboles;
 import java.util.Scanner;
 
 public class Menus {
-    
+
     private ArbolBBBalanceado arbol = new ArbolBBBalanceado();
     private static Scanner scanner = new Scanner(System.in);
 
-    public void mostrarMenuPrincipal() {
+    public static void mostrarMenuPrincipal() {
         BorrarPantalla();
-        System.out.println("\n\n**** Menú Principal ****");
+        System.out.println("**** Menú Principal ****");
         System.out.println("1. Árbol AVL");
         System.out.println("2. Árbol Red-Black");
         System.out.println("3. Árbol de Expresión Aritmética");
@@ -21,14 +21,29 @@ public class Menus {
 
         switch (opcion) {
             case 1:
-                mostrarMenuArbolAVL();
+                int opc = 1;
+                Menus AVL = new Menus();
+                while (opc == 1) {
+                    AVL.mostrarMenuArbolAVL();
+                    System.out.println("¿Quieres volver a repetir el menu de árbol de expresiones aritméticas? \n\t1)SI \t 0)NO");
+                    opc = scanner.nextInt();
+                }
+                if(opc ==0)
+                    mostrarMenuPrincipal();
                 break;
             case 2:
                 mostrarMenuArbolRedBlack();
                 break;
             case 3:
+                int opc2 = 1;
                 Programa arbolEAritmeticas = new Programa();
-                arbolEAritmeticas.menuArbol();
+                while (opc2 == 1) {
+                    arbolEAritmeticas.menuArbol();
+                    System.out.println("¿Quieres volver a repetir el menu de árbol de expresiones aritméticas? \n\t1)SI \t 0)NO");
+                    opc2 = scanner.nextInt();
+                }
+                if(opc2 ==0)
+                    mostrarMenuPrincipal();
                 break;
             case 0:
                 System.out.println("Saliendo del programa...");
@@ -47,7 +62,6 @@ public class Menus {
         System.out.println("4. Mostrar recorrido en preorden");
         System.out.println("5. Mostrar recorrido en postorden");
         System.out.println("6. Eliminar valor");
-        System.out.println("0. Regresar al menú principal");
 
         System.out.print("Ingrese una opción: ");
         int opcion = scanner.nextInt();
@@ -60,29 +74,30 @@ public class Menus {
                 break;
             case 2:
                 buscarValor();
+                esperarTecla();
                 break;
             case 3:
                 mostrarInorden();
+                esperarTecla();
                 break;
             case 4:
                 mostrarPreorden();
+                esperarTecla();
                 break;
             case 5:
                 mostrarPostorden();
+                esperarTecla();
                 break;
             case 6:
                 eliminarValor();
                 break;
-            case 0:
-                mostrarMenuPrincipal();
-                break;
             default:
                 System.out.println("Opción no válida.");
         }
+    
     }
 
-
-    private void mostrarMenuArbolRedBlack() {
+    private static void mostrarMenuArbolRedBlack() {
         RedBlackTree tree = new RedBlackTree();
         while (true) {
             BorrarPantalla();
@@ -155,7 +170,7 @@ public class Menus {
         }
     }
 
-    private  void mostrarInorden() {
+    private void mostrarInorden() {
         System.out.println("Recorrido en inorden:");
         inordenRecursivo(arbol.root);
         System.out.println();
@@ -204,7 +219,4 @@ public class Menus {
         System.out.println("Valor eliminado.");
     }
 
-    
 }
-
-    
