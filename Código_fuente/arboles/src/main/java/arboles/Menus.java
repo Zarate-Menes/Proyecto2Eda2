@@ -7,7 +7,7 @@ public class Menus {
     private ArbolBBBalanceado arbol = new ArbolBBBalanceado();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void mostrarMenuPrincipal() {
+    public void mostrarMenuPrincipal() {
         BorrarPantalla();
         System.out.println("\n\n**** Menú Principal ****");
         System.out.println("1. Árbol AVL");
@@ -37,7 +37,7 @@ public class Menus {
         }
     }
 
-    private static void mostrarMenuArbolAVL() {
+    private void mostrarMenuArbolAVL() {
         BorrarPantalla();
         System.out.println("\n\n**** Menú Árbol AVL ****");
         System.out.println("1. Agregar clave");
@@ -81,7 +81,7 @@ public class Menus {
     }
 
 
-    private static void mostrarMenuArbolRedBlack() {
+    private void mostrarMenuArbolRedBlack() {
         RedBlackTree tree = new RedBlackTree();
         while (true) {
             BorrarPantalla();
@@ -126,7 +126,7 @@ public class Menus {
         }
     }
 
-    private static void mostrarMenuArbolExpresion() {
+    private void mostrarMenuArbolExpresion() {
         BorrarPantalla();
         System.out.println("\n\n**** Menú Árbol de Expresión Aritmética ****");
         System.out.println("1. Ingresar expresión");
