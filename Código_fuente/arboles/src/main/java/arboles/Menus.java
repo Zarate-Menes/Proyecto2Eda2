@@ -25,7 +25,7 @@ public class Menus {
                 Menus AVL = new Menus();
                 while (opc == 1) {
                     AVL.mostrarMenuArbolAVL();
-                    System.out.println("¿Quieres volver a repetir el menu de árbol de expresiones aritméticas? \n\t1)SI \t 0)NO");
+                    System.out.println("¿Quieres volver a repetir el menu de árbol AVL? \n\t1)SI \t 0)NO");
                     opc = scanner.nextInt();
                 }
                 if(opc ==0)
